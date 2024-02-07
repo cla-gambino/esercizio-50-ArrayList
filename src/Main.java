@@ -1,15 +1,31 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.Comparator;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+        ArrayList<Student> students = new ArrayList<>();
+
+        students.add(new Student("Eugenio Corini", 53));
+        students.add(new Student("Mirko Pigliacelli", 30));
+        students.add(new Student("Salim Diakite", 23));
+        students.add(new Student("Ionut Nedelcearu", 27));
+        students.add(new Student("Pietro Ceccaroni", 28));
+        students.add(new Student("Kristoffer Lund Hansen", 21));
+        students.add(new Student("Filippo Ranocchia", 22));
+        students.add(new Student("Claudio Gomes", 23));
+        students.add(new Student("Jacopo Segre", 26));
+        students.add(new Student("Roberto Insigne", 29));
+        students.add(new Student("Matteo Brunori", 29));
+        students.add(new Student("Federico Di Francesco", 29));
+
+        System.out.println("lista studenti " + students);
+
+
+        students.sort(Comparator.comparing(Student::getName));
+
+        students.forEach(System.out::println);
+
     }
 }
