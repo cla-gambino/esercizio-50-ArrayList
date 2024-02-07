@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class Main {
@@ -23,9 +24,24 @@ public class Main {
         System.out.println("lista studenti " + students);
 
 
-        students.sort(Comparator.comparing(Student::getName));
+        System.out.println("lista in ordine alfabetico:");
 
+        students.sort(Comparator.comparing(Student::getName));
         students.forEach(System.out::println);
+
+
+        Collections.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student student1, Student student2) {
+                return Integer.compare(student1.getAge(), student2.getAge());
+            }
+        });
+
+        System.out.println("lista in ordine di età:");
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
 
     }
 }
